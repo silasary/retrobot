@@ -383,6 +383,12 @@ const buttons = (coreType: CoreType, id: string, multiplier: number = 1, enabled
         .setDisabled(!enabled)
         .setStyle(highlight == 'start' ? ButtonStyle.Success : ButtonStyle.Secondary);
 
+    const multiply2 = new ButtonBuilder()
+        .setCustomId(id + '-' + '2' + '-' + multiplier)
+        .setEmoji('2️⃣')
+        .setDisabled(!enabled)
+        .setStyle(highlight == '2' ? ButtonStyle.Success : ButtonStyle.Secondary);
+
     const multiply3 = new ButtonBuilder()
         .setCustomId(id + '-' + '3' + '-' + multiplier)
         .setEmoji('3️⃣')
@@ -434,7 +440,7 @@ const buttons = (coreType: CoreType, id: string, multiplier: number = 1, enabled
                     ),
                 new ActionRowBuilder()
                     .addComponents(
-                        multiply3, multiply5, multiply10
+                        multiply2, multiply3, multiply5, multiply10
                     )
             ] as any[];
 
